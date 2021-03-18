@@ -13,8 +13,8 @@ public class Cliente {
     private Date nascimento;
     private List<Endereco> enderecos;
 
-    public void Cliente() {
-        this.setEnderecos(new ArrayList<Endereco>());
+    public Cliente() {
+        this.enderecos = new ArrayList<>();
     }
 
     public String getNome() {
@@ -65,12 +65,20 @@ public class Cliente {
         this.nascimento = nascimento;
     }
 
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
     public void listarEnderecos() {
-        if(this.getEnderecos().isEmpty()) {
+        if (this.enderecos.isEmpty()) {
             System.out.println("Cliente não tem endereços cadastrados");
         }
 
-        for (Endereco endereco: this.getEnderecos()) {
+        for (Endereco endereco : this.enderecos) {
             System.out.println("=====================================");
             System.out.println("Logradouro: " + endereco.getLogradouro());
             System.out.println("Número: " + endereco.getNumero());
@@ -80,13 +88,5 @@ public class Cliente {
             System.out.println("UF: " + endereco.getUF());
             System.out.println("=====================================");
         }
-    }
-
-    public List<Endereco> getEnderecos() {
-        return enderecos;
-    }
-
-    public void setEnderecos(List<Endereco> enderecos) {
-        this.enderecos = enderecos;
     }
 }
