@@ -1,75 +1,30 @@
 package br.com.vsa.bancooo.model;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Collection;
 import java.util.List;
 
-public class Cliente {
-    private String nome;
-    private String CPF;
-    private String telefone;
-    private String sexo;
-    private String naturalidade;
-    private Date nascimento;
-    private List<Endereco> enderecos;
+public class Cliente extends Pessoa {
+    private Boolean vip;
+    private Collection<Endereco> enderecos;
 
     public Cliente() {
         this.enderecos = new ArrayList<>();
     }
 
-    public String getNome() {
-        return nome;
+    public Boolean isVip() {
+        return vip;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setVip(Boolean vip) {
+        this.vip = vip;
     }
 
-    public String getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getNaturalidade() {
-        return naturalidade;
-    }
-
-    public void setNaturalidade(String naturalidade) {
-        this.naturalidade = naturalidade;
-    }
-
-    public Date getNascimento() {
-        return nascimento;
-    }
-
-    public void setNascimento(Date nascimento) {
-        this.nascimento = nascimento;
-    }
-
-    public List<Endereco> getEnderecos() {
+    public Collection<Endereco> getEnderecos() {
         return enderecos;
     }
 
-    public void setEnderecos(List<Endereco> enderecos) {
+    public void setEnderecos(Collection<Endereco> enderecos) {
         this.enderecos = enderecos;
     }
 
